@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Trophy, Target, Star, Zap } from 'lucide-react'
 
 const Equipo = () => {
   const [isVisible, setIsVisible] = useState(false)
@@ -9,30 +10,71 @@ const Equipo = () => {
 
   const team = [
     {
-      name: 'JAIME NAVARRO',
-      role: 'Profesor / Instructor Padel & Sport Club',
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&auto=format&fit=crop',
-      experience: '6 años',
-      specialty: 'Técnica Avanzada',
-      achievements: [
-        '6 años dando clases (3 en España / 1 en Holanda / 2 en CR)',
-        'Título RPP y Federación Menorquina de Padel',
-        'Jugador de 1ra-2da categoría en la FMP',
-        'Encargado de la liga por equipos en Madrid y Holanda',
+      name: 'JEAN MICHAEL',
+      role: 'Entrenador',
+      image: '/Jean Michael.JPG',
+      imagePosition: 'object-bottom',
+      icon: Trophy,
+      stats: [
+        { label: 'Nivel', value: 'APA' },
+        { label: 'Certificado', value: 'MBA' },
+      ],
+      features: [
+        'Monitor Nivel 1 APA',
+        'Coach certificado por Padel MBA',
+        'Especializado en guiar a jugadores principiantes',
+        'Metodología que combina técnica, estructura y motivación',
       ],
     },
     {
-      name: 'JUAN CRUZ',
-      role: 'Profesor / Instructor Padel & Sport Club',
-      image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=400&auto=format&fit=crop',
-      experience: '8 años',
-      specialty: 'Alto Rendimiento',
-      achievements: [
-        'Head coach en Mérida, Mx. Academia Épica Padel Club',
-        'Encargado de la academia de alto rendimiento',
-        'Profesor en la academia de Propadel',
-        'Head coach en Área Padel',
-        'Padel Academy en Panama como profesor',
+      name: 'JAIME',
+      role: 'Profesor',
+      image: '/Jaime.JPG',
+      imagePosition: 'object-bottom',
+      icon: Target,
+      stats: [
+        { label: 'Experiencia', value: '6 años' },
+        { label: 'Título', value: 'RPP' },
+      ],
+      features: [
+        '6 años de experiencia como profesor en España, Holanda y Costa Rica',
+        'Título: RPP (Registro Profesional de Pádel) y FMP',
+        'Jugador de 1ª-2ª categoría en la FMP',
+        'Formado con metodologías europeas de alta competencia',
+      ],
+    },
+    {
+      name: 'JUGADORA DESTACADA',
+      role: 'Primera Categoría Femenina',
+      image: '/jugadora_destacada.jpg',
+      imagePosition: 'object-bottom',
+      icon: Star,
+      stats: [
+        { label: 'Nivel', value: 'APA' },
+        { label: 'Certificado', value: 'MBA' },
+      ],
+      features: [
+        'Monitor Nivel 1 APA',
+        'Coach certificada por Padel MBA',
+        'Compite en primera categoría femenina de Costa Rica',
+        'Una de las jugadoras más destacadas del país',
+      ],
+    },
+    {
+      name: 'DIRECTOR DEPORTIVO',
+      role: 'Profesor de Padel',
+      image: '/DIrector Deportivo.JPG',
+      imagePosition: 'object-bottom',
+      icon: Zap,
+      stats: [
+        { label: 'Monitor', value: '1 y 2' },
+        { label: 'Coach', value: 'MBA' },
+      ],
+      features: [
+        'Monitor Nivel 1 y 2 - APA (Asociación de Pádel Argentino)',
+        'Head Coach - PÁDEL MBA',
+        'Formador de Profesores - PÁDEL MBA',
+        'Compite en primera categoría en Costa Rica',
       ],
     },
   ]
@@ -51,66 +93,96 @@ const Equipo = () => {
           </h2>
         </div>
 
-        {/* Team Members */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {team.map((member, index) => (
-            <div
-              key={index}
-              className={`bg-white rounded-2xl shadow-xl overflow-hidden hover-lift transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
-              style={{
-                transitionDelay: `${index * 300}ms`,
-              }}
-            >
-              {/* Header con foto */}
-              <div className="relative h-64 bg-gradient-to-br from-accent-600 to-accent-800 overflow-hidden">
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-60"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+        {/* Tarjetas Deportivas Estilo Trading Card */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 md:gap-8 max-w-6xl mx-auto px-4">
+          {team.map((member, index) => {
+            const IconComponent = member.icon
+            return (
+              <div
+                key={index}
+                className={`group relative bg-gradient-to-br from-gray-900 via-gray-800 to-black rounded-2xl overflow-hidden shadow-2xl hover:shadow-accent-500/50 hover:-translate-y-2 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-20 scale-95'}`}
+                style={{
+                  transitionDelay: `${index * 200}ms`,
+                }}
+              >
+                {/* Borde decorativo superior */}
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-accent-500 via-accent-600 to-accent-500"></div>
                 
-                {/* Info sobre la foto */}
-                <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <h3 className="text-3xl font-bold text-white mb-2">{member.name}</h3>
-                  <p className="text-accent-200 font-medium">{member.role}</p>
-                </div>
+                {/* Imagen principal con overlay */}
+                <div className="relative h-[600px] md:h-[800px] overflow-hidden">
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className={`w-full h-full object-cover ${member.imagePosition || 'object-[center_20%]'} group-hover:scale-105 transition-transform duration-700`}
+                    style={member.name === 'JEAN MICHAEL' ? { transform: 'translateY(-100px)' } : member.name === 'JAIME' ? { transform: 'translateY(-30px)' } : member.name === 'DIRECTOR DEPORTIVO' ? { transform: 'translateY(-100px)' } : member.name === 'JUGADORA DESTACADA' ? { transform: 'translateY(-100px)' } : {}}
+                  />
+                  {/* Overlay gradiente deportivo */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/80 to-transparent"></div>
+                  
+                  {/* Overlay adicional para la zona de información */}
+                  <div className="absolute inset-x-0 top-1/2 bottom-0 bg-black/70"></div>
 
-                {/* Badges */}
-                <div className="absolute top-4 right-4 flex flex-col gap-2">
-                  <div className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full">
-                    <span className="text-white text-sm font-semibold">{member.experience}</span>
+                  {/* Stats más abajo */}
+                  <div className="absolute top-1/2 translate-y-12 left-4 right-4 flex justify-between gap-3">
+                    {member.stats.map((stat, idx) => (
+                      <div 
+                        key={idx} 
+                        className={`flex-1 bg-black/70 backdrop-blur-sm rounded-lg p-3 border border-white/10 transition-all duration-700 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}
+                        style={{
+                          transitionDelay: `${(index * 200) + (idx * 150) + 400}ms`,
+                        }}
+                      >
+                        <div className="text-accent-400 text-[10px] md:text-xs font-semibold mb-1">{stat.label}</div>
+                        <div className="text-white text-lg md:text-xl font-black">{stat.value}</div>
+                      </div>
+                    ))}
                   </div>
-                  <div className="bg-gold-500/90 backdrop-blur-sm px-4 py-2 rounded-full">
-                    <span className="text-white text-sm font-semibold">{member.specialty}</span>
-                  </div>
-                </div>
-              </div>
 
-              {/* Contenido - Logros */}
-              <div className="p-6">
-                <h4 className="text-lg font-bold text-gray-900 mb-4 flex items-center">
-                  <span className="w-1 h-6 bg-accent-600 mr-3 rounded"></span>
-                  Logros y Experiencia
-                </h4>
-                
-                <ul className="space-y-3">
-                  {member.achievements.map((achievement, idx) => (
-                    <li 
-                      key={idx} 
-                      className={`flex items-start transition-all duration-500 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'}`}
+                  {/* Contenido debajo de los stats */}
+                  <div className="absolute top-1/2 translate-y-36 left-4 right-4 space-y-4">
+                    {/* Header con icono */}
+                    <div 
+                      className={`flex items-center gap-3 pb-3 border-b border-white/20 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
                       style={{
-                        transitionDelay: `${(index * 300) + (idx * 100) + 400}ms`,
+                        transitionDelay: `${(index * 200) + 700}ms`,
                       }}
                     >
-                      <div className="flex-shrink-0 w-2 h-2 bg-accent-600 rounded-full mt-2 mr-3"></div>
-                      <span className="text-gray-700 text-sm leading-relaxed">{achievement}</span>
-                    </li>
-                  ))}
-                </ul>
+                      <div className="bg-accent-600/30 backdrop-blur-sm p-2.5 rounded-lg">
+                        <IconComponent className="w-6 h-6 text-accent-400" />
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="text-xl md:text-2xl font-black text-white tracking-tight leading-tight drop-shadow-lg">
+                          {member.name}
+                        </h3>
+                        <p className="text-accent-300 text-xs md:text-sm font-semibold">{member.role}</p>
+                      </div>
+                    </div>
+
+                    {/* Features */}
+                    <ul className="space-y-2 bg-black/60 backdrop-blur-sm rounded-lg p-4">
+                      {member.features.map((feature, idx) => (
+                        <li 
+                          key={idx} 
+                          className={`flex items-start gap-2 text-gray-200 text-xs md:text-sm transition-all duration-700 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}
+                          style={{
+                            transitionDelay: `${(index * 200) + (idx * 100) + 900}ms`,
+                          }}
+                        >
+                          <div className="flex-shrink-0 w-1.5 h-1.5 bg-accent-500 rounded-full mt-1.5"></div>
+                          <span className="leading-relaxed">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+
+                {/* Efecto de brillo en hover */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+                  <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-accent-500/5 to-transparent"></div>
+                </div>
               </div>
-            </div>
-          ))}
+            )
+          })}
         </div>
       </div>
     </section>

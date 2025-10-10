@@ -9,6 +9,9 @@ const Hero = ({ scrollY }) => {
   const eventosRef = useRef(null)
   const registroRef = useRef(null)
   const [scrollProgress, setScrollProgress] = useState(0)
+  const [videoLoaded, setVideoLoaded] = useState(false)
+  const [videoError, setVideoError] = useState(false)
+  const [splitProgress, setSplitProgress] = useState(0)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,6 +26,12 @@ const Hero = ({ scrollY }) => {
       const documentHeight = document.documentElement.scrollHeight - windowHeight
       const progress = (window.scrollY / documentHeight) * 100
       setScrollProgress(progress)
+
+      // Calcular progreso de división del hero (0-100%)
+      // La división comienza cuando empiezas a hacer scroll y termina al 70% del viewport
+      const maxSplit = windowHeight * 0.7
+      const splitAmount = Math.min((window.scrollY / maxSplit) * 100, 100)
+      setSplitProgress(splitAmount)
     }
 
     window.addEventListener('scroll', handleScroll, { passive: true })
@@ -31,6 +40,32 @@ const Hero = ({ scrollY }) => {
 
   useEffect(() => {
     setIsVisible(true)
+
+    // Lazy load video con mejor calidad
+    const loadVideo = () => {
+      if (videoRef.current) {
+        const video = videoRef.current
+        
+        // Cargar el video de forma progresiva
+        video.load()
+        
+        // Manejar cuando el video está listo para reproducir
+        video.addEventListener('loadeddata', () => {
+          setVideoLoaded(true)
+          video.play().catch(err => {
+            console.log('Video autoplay prevented:', err)
+          })
+        })
+
+        // Manejar errores de carga
+        video.addEventListener('error', () => {
+          setVideoError(true)
+        })
+      }
+    }
+
+    // Cargar video después de un pequeño delay para priorizar contenido crítico
+    const timer = setTimeout(loadVideo, 100)
 
     // Intersection Observer para animaciones de entrada
     const observerOptions = {
@@ -50,7 +85,10 @@ const Hero = ({ scrollY }) => {
     if (eventosRef.current) observer.observe(eventosRef.current)
     if (registroRef.current) observer.observe(registroRef.current)
 
-    return () => observer.disconnect()
+    return () => {
+      clearTimeout(timer)
+      observer.disconnect()
+    }
   }, [])
 
   const services = [
@@ -141,60 +179,92 @@ const Hero = ({ scrollY }) => {
       ></div>
     </div>
 
-    <section id="hero" className="relative h-screen w-full overflow-hidden">
-      {/* Background Video */}
-      <video
-        ref={videoRef}
-        autoPlay
-        loop
-        muted
-        playsInline
-        preload="auto"
-        className="absolute inset-0 w-full h-full object-cover scale-105"
+    <section id="hero" className="relative h-[85vh] min-h-[600px] w-full overflow-hidden">
+      {/* Background Image Principal - Pelotas de Pádel */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center"
         style={{
-          willChange: 'transform',
-          filter: 'brightness(0.9) contrast(1.1)',
+          backgroundImage: 'url(/two-balls-line-blue-synthetic-grass-paddle-tennis-court-health-sport-concept.jpg)',
+          backgroundPosition: 'center 40%',
         }}
       >
-        <source src="/Reserva-aereo.mp4" type="video/mp4" />
-        {/* Fallback image if video doesn't load */}
-        <img
-          src="https://images.unsplash.com/photo-1554068865-24cecd4e34b8?q=80&w=2070&auto=format&fit=crop"
-          alt="Club Reserva"
-          className="w-full h-full object-cover"
-        />
-      </video>
+        {/* Overlay con gradiente sofisticado para elegancia - Reducido para ver más el fondo */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#30544b]/70 via-[#1a2f2a]/60 to-black/75" />
+        
+        {/* Overlay adicional para profundidad - Reducido */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-[#30544b]/40" />
+        
+        {/* Efecto de viñeta elegante - Más sutil */}
+        <div className="absolute inset-0" style={{
+          background: 'radial-gradient(ellipse at center, transparent 0%, rgba(0,0,0,0.25) 100%)'
+        }} />
+        
+        {/* Textura sutil para añadir sofisticación */}
+        <div className="absolute inset-0 opacity-5" style={{
+          backgroundImage: 'url("data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="1"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")',
+        }} />
+      </div>
 
-      {/* Overlay gradiente profesional */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/60" />
+      {/* Elementos decorativos dorados flotantes */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        {/* Líneas decorativas elegantes */}
+        <div className="absolute top-1/4 left-0 w-32 h-px bg-gradient-to-r from-transparent via-[#ba9141]/40 to-transparent" />
+        <div className="absolute top-1/3 right-0 w-40 h-px bg-gradient-to-l from-transparent via-[#ba9141]/40 to-transparent" />
+        <div className="absolute bottom-1/3 left-0 w-36 h-px bg-gradient-to-r from-transparent via-[#ba9141]/30 to-transparent" />
+        
+        {/* Acentos dorados en las esquinas */}
+        <div className="absolute top-8 left-8 w-16 h-16 border-l-2 border-t-2 border-[#ba9141]/30" />
+        <div className="absolute top-8 right-8 w-16 h-16 border-r-2 border-t-2 border-[#ba9141]/30" />
+        <div className="absolute bottom-8 left-8 w-16 h-16 border-l-2 border-b-2 border-[#ba9141]/30" />
+        <div className="absolute bottom-8 right-8 w-16 h-16 border-r-2 border-b-2 border-[#ba9141]/30" />
+      </div>
 
-      {/* Content */}
+      {/* Content con diseño elegante */}
       <div className="relative h-full flex items-center justify-center px-4 z-10">
         <div className="max-w-5xl mx-auto text-center">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 opacity-0 animate-slide-left">
-            Bienvenidos a Reserva
+          {/* Badge elegante superior */}
+          <div className="inline-block mb-6 opacity-0 animate-slide-up">
+            <div className="px-6 py-2 border border-[#ba9141]/40 rounded-full backdrop-blur-sm bg-white/5">
+              <span className="text-[#ba9141] text-sm font-semibold tracking-widest uppercase">
+                Premium Padel Experience
+              </span>
+            </div>
+          </div>
+
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 opacity-0 animate-slide-left drop-shadow-2xl">
+            Bienvenidos a <span className="text-[#ba9141]">Reserva</span>
           </h1>
-          <h2 className="text-2xl md:text-4xl lg:text-5xl font-semibold text-white mb-8 opacity-0 animate-slide-right delay-400">
+          
+          <h2 className="text-2xl md:text-4xl lg:text-5xl font-semibold text-white/95 mb-8 opacity-0 animate-slide-right delay-400 drop-shadow-lg">
             Sports & Social Club
           </h2>
-          <p className="text-base md:text-lg lg:text-xl text-white/90 mb-12 max-w-4xl mx-auto leading-relaxed opacity-0 animate-slide-up delay-600">
-            Un club social y deportivo para toda la familia, que combina lo mejor del Padel y la naturaleza. En nuestra Reserva, le ofrecemos una experiencia culinaria inigualable, dos simuladores de golf de última generación, nuestras pistas de Padel profesionales y nuestra tienda boutique, donde encontrará las últimas tendencias. Todo esto rodeado de una vegetación extraordinaria que le dará una sensación de relajación y disfrute a todos los que nos acompañen.
+          
+          {/* Línea decorativa dorada */}
+          <div className="flex items-center justify-center gap-4 mb-8 opacity-0 animate-slide-up delay-500">
+            <div className="w-16 h-px bg-gradient-to-r from-transparent to-[#ba9141]/60"></div>
+            <div className="w-2 h-2 rotate-45 bg-[#ba9141]/60"></div>
+            <div className="w-16 h-px bg-gradient-to-l from-transparent to-[#ba9141]/60"></div>
+          </div>
+          
+          <p className="text-base md:text-lg text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed opacity-0 animate-slide-up delay-600 drop-shadow-lg backdrop-blur-sm bg-black/20 p-5 rounded-2xl border border-white/10">
+            Un club social y deportivo para toda la familia, que combina lo mejor del Padel y la naturaleza. En nuestra Reserva, le ofrecemos una experiencia culinaria inigualable, dos simuladores de golf de última generación, nuestras pistas de Padel profesionales y nuestra tienda boutique.
           </p>
           
-          {/* CTA Button */}
+          {/* CTA Button mejorado */}
           <button
             onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
-            className="inline-block px-12 py-5 bg-[#30544b] text-white text-lg font-bold rounded-lg hover:bg-[#2a4a42] transition-all duration-500 hover:shadow-2xl hover:shadow-[#30544b]/50 transform hover:scale-105 opacity-0 animate-gentle-scale delay-600"
+            className="group relative inline-flex items-center gap-2 md:gap-3 px-8 md:px-12 py-4 md:py-5 bg-gradient-to-r from-[#ba9141] to-[#d4a853] text-white text-base md:text-lg font-bold rounded-full hover:shadow-2xl hover:shadow-[#ba9141]/50 transition-all duration-500 transform hover:scale-105 opacity-0 animate-gentle-scale delay-600 overflow-hidden"
           >
-            Descubre más
+            <span className="relative z-10">Descubre más</span>
+            <svg className="relative z-10 w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+            </svg>
+            {/* Efecto de brillo al hover */}
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
           </button>
         </div>
       </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-10">
-        <ChevronDown size={40} className="text-white/70" />
-      </div>
     </section>
 
     {/* Nosotros Content */}

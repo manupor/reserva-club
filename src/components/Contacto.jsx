@@ -113,6 +113,50 @@ const Contacto = () => {
             ENVIAR
           </button>
         </form>
+
+        {/* Google Maps */}
+        <div className="mt-16">
+          <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+            NUESTRA UBICACIÓN
+          </h3>
+          <div className="w-full h-[450px] rounded-lg overflow-hidden shadow-xl">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930.0234567890123!2d-84.1417464!3d9.9344193!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0fde9301dd921%3A0xca0949cf5cf42edc!2sReserva%20Sports%20and%20Social%20Club!5e0!3m2!1sen!2scr!4v1234567890123!5m2!1sen!2scr"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Reserva Sports and Social Club Location"
+            ></iframe>
+          </div>
+          
+          {/* Información de contacto */}
+          <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+            <div className="p-4">
+              <h4 className="font-bold text-gray-900 mb-2">Dirección</h4>
+              <p className="text-gray-600">WVM5+Q8 Escazú<br />San José Province, 10203</p>
+            </div>
+            <div className="p-4">
+              <h4 className="font-bold text-gray-900 mb-2">Teléfono</h4>
+              <a href="tel:+50687980008" className="text-accent-600 hover:text-accent-700">
+                8798 0008
+              </a>
+            </div>
+            <div className="p-4">
+              <h4 className="font-bold text-gray-900 mb-2">Instagram</h4>
+              <a 
+                href="https://instagram.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-accent-600 hover:text-accent-700"
+              >
+                @reservasportsclub
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   )

@@ -9,10 +9,12 @@ import Contacto from './components/Contacto'
 import Registro from './components/Registro'
 import Reservas from './components/Reservas'
 import Footer from './components/Footer'
+import Preloader from './components/Preloader'
 
 function App() {
   const [scrollY, setScrollY] = useState(0)
   const [activeTab, setActiveTab] = useState('inicio')
+  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -47,15 +49,20 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen">
-      <Header activeTab={activeTab} setActiveTab={setActiveTab} />
-      <div className="pt-16 md:pt-20">
-        <div key={activeTab} className={`${activeTab === 'inicio' ? '' : 'min-h-[calc(100vh-200px)]'} tab-content-enter`}>
-          {renderContent()}
+    <>
+      <Preloader onLoadComplete={() => setIsLoading(false)} />
+      {!isLoading && (
+        <div className="min-h-screen">
+          <Header activeTab={activeTab} setActiveTab={setActiveTab} />
+          <div className="pt-16 md:pt-20">
+            <div key={activeTab} className={`${activeTab === 'inicio' ? '' : 'min-h-[calc(100vh-200px)]'} tab-content-enter`}>
+              {renderContent()}
+            </div>
+          </div>
+          <Footer />
         </div>
-      </div>
-      <Footer />
-    </div>
+      )}
+    </>
   )
 }
 

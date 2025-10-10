@@ -26,8 +26,19 @@ const Membresias = () => {
   return (
     <section 
       id="membresias" 
-      className={`py-20 bg-gray-50 transition-opacity duration-500 ${isVisible ? 'opacity-100' : 'opacity-0'}`}
+      className={`relative py-20 transition-opacity duration-500 ${isVisible ? 'opacity-100' : 'opacity-0'}`}
     >
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: 'url(/two-balls-line-blue-synthetic-grass-paddle-tennis-court-health-sport-concept.jpg)',
+        }}
+      >
+        {/* Overlay para mejorar legibilidad */}
+        <div className="absolute inset-0 bg-white/85 backdrop-blur-sm"></div>
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
