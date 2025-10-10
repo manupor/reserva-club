@@ -88,7 +88,7 @@ const Equipo = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <p className="text-accent-600 font-semibold mb-4">NUESTRO EQUIPO</p>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
             Conoce a nuestro Equipo
           </h2>
         </div>
@@ -109,7 +109,7 @@ const Equipo = () => {
                 <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-accent-500 via-accent-600 to-accent-500"></div>
                 
                 {/* Imagen principal con overlay */}
-                <div className="relative h-[600px] md:h-[800px] overflow-hidden">
+                <div className="relative h-[500px] sm:h-[600px] md:h-[700px] lg:h-[800px] overflow-hidden">
                   <img
                     src={member.image}
                     alt={member.name}
@@ -123,53 +123,53 @@ const Equipo = () => {
                   <div className="absolute inset-x-0 top-1/2 bottom-0 bg-black/70"></div>
 
                   {/* Stats más abajo */}
-                  <div className="absolute top-1/2 translate-y-12 left-4 right-4 flex justify-between gap-3">
+                  <div className="absolute top-1/2 translate-y-8 sm:translate-y-12 left-2 right-2 sm:left-4 sm:right-4 flex justify-between gap-2 sm:gap-3">
                     {member.stats.map((stat, idx) => (
                       <div 
                         key={idx} 
-                        className={`flex-1 bg-black/70 backdrop-blur-sm rounded-lg p-3 border border-white/10 transition-all duration-700 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}
+                        className={`flex-1 bg-black/70 backdrop-blur-sm rounded-lg p-2 sm:p-3 border border-white/10 transition-all duration-700 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}
                         style={{
                           transitionDelay: `${(index * 200) + (idx * 150) + 400}ms`,
                         }}
                       >
-                        <div className="text-accent-400 text-[10px] md:text-xs font-semibold mb-1">{stat.label}</div>
-                        <div className="text-white text-lg md:text-xl font-black">{stat.value}</div>
+                        <div className="text-accent-400 text-[9px] sm:text-[10px] md:text-xs font-semibold mb-0.5 sm:mb-1">{stat.label}</div>
+                        <div className="text-white text-base sm:text-lg md:text-xl font-black">{stat.value}</div>
                       </div>
                     ))}
                   </div>
 
                   {/* Contenido debajo de los stats */}
-                  <div className="absolute top-1/2 translate-y-36 left-4 right-4 space-y-4">
+                  <div className="absolute top-1/2 translate-y-24 sm:translate-y-32 md:translate-y-36 left-2 right-2 sm:left-4 sm:right-4 space-y-2 sm:space-y-3 md:space-y-4">
                     {/* Header con icono */}
                     <div 
-                      className={`flex items-center gap-3 pb-3 border-b border-white/20 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+                      className={`flex items-center gap-2 sm:gap-3 pb-2 sm:pb-3 border-b border-white/20 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
                       style={{
                         transitionDelay: `${(index * 200) + 700}ms`,
                       }}
                     >
-                      <div className="bg-accent-600/30 backdrop-blur-sm p-2.5 rounded-lg">
-                        <IconComponent className="w-6 h-6 text-accent-400" />
+                      <div className="bg-accent-600/30 backdrop-blur-sm p-1.5 sm:p-2.5 rounded-lg">
+                        <IconComponent className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-accent-400" />
                       </div>
                       <div className="flex-1">
-                        <h3 className="text-xl md:text-2xl font-black text-white tracking-tight leading-tight drop-shadow-lg">
+                        <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-black text-white tracking-tight leading-tight drop-shadow-lg">
                           {member.name}
                         </h3>
-                        <p className="text-accent-300 text-xs md:text-sm font-semibold">{member.role}</p>
+                        <p className="text-accent-300 text-[10px] sm:text-xs md:text-sm font-semibold">{member.role}</p>
                       </div>
                     </div>
 
                     {/* Features */}
-                    <ul className="space-y-2 bg-black/60 backdrop-blur-sm rounded-lg p-4">
+                    <ul className="space-y-1.5 sm:space-y-2 bg-black/60 backdrop-blur-sm rounded-lg p-2 sm:p-3 md:p-4">
                       {member.features.map((feature, idx) => (
                         <li 
                           key={idx} 
-                          className={`flex items-start gap-2 text-gray-200 text-xs md:text-sm transition-all duration-700 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}
+                          className={`flex items-start gap-1.5 sm:gap-2 text-gray-200 text-[10px] sm:text-xs md:text-sm transition-all duration-700 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}
                           style={{
                             transitionDelay: `${(index * 200) + (idx * 100) + 900}ms`,
                           }}
                         >
-                          <div className="flex-shrink-0 w-1.5 h-1.5 bg-accent-500 rounded-full mt-1.5"></div>
-                          <span className="leading-relaxed">{feature}</span>
+                          <div className="flex-shrink-0 w-1 h-1 sm:w-1.5 sm:h-1.5 bg-accent-500 rounded-full mt-1 sm:mt-1.5"></div>
+                          <span className="leading-snug sm:leading-relaxed">{feature}</span>
                         </li>
                       ))}
                     </ul>

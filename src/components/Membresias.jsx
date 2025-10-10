@@ -42,7 +42,7 @@ const Membresias = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
             MEMBRESÍAS CLUB RESERVA
           </h2>
         </div>
@@ -56,53 +56,53 @@ const Membresias = () => {
         </div>
 
         {/* Membership Table */}
-        <div className="overflow-x-auto">
-          <table className="w-full border-collapse bg-white shadow-lg">
+        <div className="overflow-x-auto -mx-4 sm:mx-0">
+          <table className="w-full border-collapse bg-white shadow-lg min-w-[640px]">
             <thead>
               <tr className="bg-gray-100">
-                <th className="border border-gray-300 px-6 py-4 text-left font-semibold text-gray-900"></th>
-                <th className="border border-gray-300 px-6 py-4 text-center font-semibold text-gray-900">FAMILIAR</th>
-                <th className="border border-gray-300 px-6 py-4 text-center font-semibold text-gray-900">INDIVIDUAL / EJECUTIVA</th>
-                <th className="border border-gray-300 px-6 py-4 text-center font-semibold text-gray-900">CORPORATIVA</th>
+                <th className="border border-gray-300 px-2 sm:px-4 md:px-6 py-2 sm:py-3 md:py-4 text-left font-semibold text-gray-900 text-xs sm:text-sm md:text-base"></th>
+                <th className="border border-gray-300 px-2 sm:px-4 md:px-6 py-2 sm:py-3 md:py-4 text-center font-semibold text-gray-900 text-xs sm:text-sm md:text-base">FAMILIAR</th>
+                <th className="border border-gray-300 px-2 sm:px-4 md:px-6 py-2 sm:py-3 md:py-4 text-center font-semibold text-gray-900 text-xs sm:text-sm md:text-base">INDIVIDUAL / EJECUTIVA</th>
+                <th className="border border-gray-300 px-2 sm:px-4 md:px-6 py-2 sm:py-3 md:py-4 text-center font-semibold text-gray-900 text-xs sm:text-sm md:text-base">CORPORATIVA</th>
               </tr>
             </thead>
             <tbody>
               {features.map((feature, index) => (
                 <tr key={index} className={index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
-                  <td className="border border-gray-300 px-6 py-4 font-medium text-gray-900">
+                  <td className="border border-gray-300 px-2 sm:px-4 md:px-6 py-2 sm:py-3 md:py-4 font-medium text-gray-900 text-xs sm:text-sm md:text-base">
                     {feature.name}
                   </td>
-                  <td className="border border-gray-300 px-6 py-4 text-center">
+                  <td className="border border-gray-300 px-2 sm:px-4 md:px-6 py-2 sm:py-3 md:py-4 text-center">
                     {typeof feature.familiar === 'boolean' ? (
                       feature.familiar ? (
-                        <Check className="w-6 h-6 text-gold-600 mx-auto" />
+                        <Check className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-gold-600 mx-auto" />
                       ) : (
-                        <X className="w-6 h-6 text-gray-400 mx-auto" />
+                        <X className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-gray-400 mx-auto" />
                       )
                     ) : (
-                      <span className="text-gray-700">{feature.familiar}</span>
+                      <span className="text-gray-700 text-xs sm:text-sm md:text-base">{feature.familiar}</span>
                     )}
                   </td>
-                  <td className="border border-gray-300 px-6 py-4 text-center">
+                  <td className="border border-gray-300 px-2 sm:px-4 md:px-6 py-2 sm:py-3 md:py-4 text-center">
                     {typeof feature.ejecutiva === 'boolean' ? (
                       feature.ejecutiva ? (
-                        <Check className="w-6 h-6 text-gold-600 mx-auto" />
+                        <Check className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-gold-600 mx-auto" />
                       ) : (
-                        <X className="w-6 h-6 text-gray-400 mx-auto" />
+                        <X className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-gray-400 mx-auto" />
                       )
                     ) : (
-                      <span className="text-gray-700">{feature.ejecutiva}</span>
+                      <span className="text-gray-700 text-xs sm:text-sm md:text-base">{feature.ejecutiva}</span>
                     )}
                   </td>
-                  <td className="border border-gray-300 px-6 py-4 text-center">
+                  <td className="border border-gray-300 px-2 sm:px-4 md:px-6 py-2 sm:py-3 md:py-4 text-center">
                     {typeof feature.corporativa === 'boolean' ? (
                       feature.corporativa ? (
-                        <Check className="w-6 h-6 text-gold-600 mx-auto" />
+                        <Check className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-gold-600 mx-auto" />
                       ) : (
-                        <X className="w-6 h-6 text-gray-400 mx-auto" />
+                        <X className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-gray-400 mx-auto" />
                       )
                     ) : (
-                      <span className="text-gray-700">{feature.corporativa}</span>
+                      <span className="text-gray-700 text-xs sm:text-sm md:text-base">{feature.corporativa}</span>
                     )}
                   </td>
                 </tr>

@@ -68,7 +68,7 @@ const Noticias = () => {
         <div className="text-center mb-16">
           <div className="flex items-center justify-center mb-4">
             <Instagram className="text-primary-600 mr-3" size={40} />
-            <h2 className="text-4xl md:text-5xl font-bold text-primary-600">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-primary-600">
               Noticias y Eventos
             </h2>
           </div>
