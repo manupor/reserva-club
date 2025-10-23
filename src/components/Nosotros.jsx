@@ -11,15 +11,15 @@ const Nosotros = () => {
   const services = [
     {
       title: '5 Pistas Indoor Panorámicas',
-      image: 'https://images.unsplash.com/photo-1554068865-24cecd4e34b8?q=80&w=800&auto=format&fit=crop',
+      image: '/canchas.jpeg',
     },
     {
       title: '1 Pista Estadio Súper Panorámica',
-      image: 'https://images.unsplash.com/photo-1622163642998-1ea32b0bbc67?q=80&w=800&auto=format&fit=crop',
+      image: '/cancha estadio.jpeg',
     },
     {
       title: 'Hooligans Sport Bar',
-      image: 'https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=800&auto=format&fit=crop',
+      image: '/holligans.jpeg',
     },
     {
       title: 'Zona VIP',
@@ -27,7 +27,7 @@ const Nosotros = () => {
     },
     {
       title: 'Simuladores de Golf',
-      image: 'https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?q=80&w=800&auto=format&fit=crop',
+      image: '/MINI GOLF.jpeg',
     },
     {
       title: 'Tienda Boutique',

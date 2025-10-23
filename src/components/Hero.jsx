@@ -94,27 +94,28 @@ const Hero = ({ scrollY }) => {
   const services = [
     {
       title: '5 Pistas Indoor Panorámicas',
-      image: 'https://images.unsplash.com/photo-1554068865-24cecd4e34b8?q=80&w=800&auto=format&fit=crop',
+      image: '/canchas.jpeg',
     },
     {
       title: '1 Pista Estadio Súper Panorámica',
-      image: 'https://images.unsplash.com/photo-1622163642998-1ea32b0bbc67?q=80&w=800&auto=format&fit=crop',
+      image: '/cancha estadio.jpeg',
     },
     {
       title: 'Hooligans Sport Bar',
-      image: 'https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=800&auto=format&fit=crop',
+      image: '/holligans.jpeg',
     },
     {
       title: 'Zona VIP',
-      image: 'https://images.unsplash.com/photo-1617883861744-1c0c0e2a0da5?q=80&w=800&auto=format&fit=crop',
+      image: '/VIP.jpg',
+      isVIP: true,
     },
     {
       title: 'Simuladores de Golf',
-      image: 'https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?q=80&w=800&auto=format&fit=crop',
+      image: '/MINI GOLF.jpeg',
     },
     {
       title: 'Pro Shop',
-      image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=800&auto=format&fit=crop',
+      image: '/tienda.jpg',
     },
   ]
 
@@ -279,7 +280,7 @@ const Hero = ({ scrollY }) => {
             {services.map((service, index) => (
               <div
                 key={index}
-                className={`relative h-72 overflow-hidden rounded-xl shadow-lg group cursor-pointer hover-lift transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+                className={`relative h-72 overflow-hidden rounded-xl shadow-lg group transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
                 style={{ transitionDelay: `${index * 150}ms` }}
               >
                 <img src={service.image} alt={service.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
@@ -414,6 +415,7 @@ const Hero = ({ scrollY }) => {
         </div>
       </div>
     </section>
+
     </>
   )
 }

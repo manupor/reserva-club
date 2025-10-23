@@ -116,10 +116,10 @@ const Contacto = () => {
 
         {/* Google Maps */}
         <div className="mt-16">
-          <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+          <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">
             NUESTRA UBICACIÓN
           </h3>
-          <div className="w-full h-[450px] rounded-lg overflow-hidden shadow-xl">
+          <div className="relative w-full h-[500px] md:h-[600px] rounded-2xl overflow-hidden shadow-2xl">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930.0234567890123!2d-84.1417464!3d9.9344193!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0fde9301dd921%3A0xca0949cf5cf42edc!2sReserva%20Sports%20and%20Social%20Club!5e0!3m2!1sen!2scr!4v1234567890123!5m2!1sen!2scr"
               width="100%"
@@ -130,30 +130,52 @@ const Contacto = () => {
               referrerPolicy="no-referrer-when-downgrade"
               title="Reserva Sports and Social Club Location"
             ></iframe>
-          </div>
-          
-          {/* Información de contacto */}
-          <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-            <div className="p-4">
-              <h4 className="font-bold text-gray-900 mb-2">Dirección</h4>
-              <p className="text-gray-600">WVM5+Q8 Escazú<br />San José Province, 10203</p>
-            </div>
-            <div className="p-4">
-              <h4 className="font-bold text-gray-900 mb-2">Teléfono</h4>
-              <a href="tel:+50687980008" className="text-accent-600 hover:text-accent-700">
-                8798 0008
-              </a>
-            </div>
-            <div className="p-4">
-              <h4 className="font-bold text-gray-900 mb-2">Instagram</h4>
-              <a 
-                href="https://instagram.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-accent-600 hover:text-accent-700"
-              >
-                @reservasportsclub
-              </a>
+            
+            {/* Floating Info Card */}
+            <div className="absolute top-6 left-6 bg-white rounded-xl shadow-2xl p-6 max-w-sm z-10">
+              <h4 className="text-xl font-bold text-gray-900 mb-2">Reserva Sports and Social Club</h4>
+              <p className="text-gray-600 text-sm mb-3">10203, San José, Escazú, 10203</p>
+              
+              {/* Rating */}
+              <div className="flex items-center mb-3">
+                <span className="text-lg font-bold text-gray-900 mr-2">5.0</span>
+                <div className="flex text-yellow-400">
+                  {'★★★★★'.split('').map((star, i) => (
+                    <span key={i}>{star}</span>
+                  ))}
+                </div>
+                <a 
+                  href="https://www.google.com/maps/search/?api=1&query=Reserva+Sports+and+Social+Club"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="ml-2 text-sm text-blue-600 hover:underline"
+                >
+                  5 reviews
+                </a>
+              </div>
+              
+              {/* Buttons */}
+              <div className="flex gap-3">
+                <a
+                  href="https://www.google.com/maps/dir/?api=1&destination=Reserva+Sports+and+Social+Club,+Escazu,+Costa+Rica"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white text-sm font-semibold rounded-lg hover:bg-blue-700 transition-colors"
+                >
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+                  </svg>
+                  Directions
+                </a>
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=Reserva+Sports+and+Social+Club"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2 text-blue-600 text-sm font-semibold hover:bg-blue-50 rounded-lg transition-colors"
+                >
+                  View larger map
+                </a>
+              </div>
             </div>
           </div>
         </div>
