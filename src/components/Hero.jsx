@@ -112,7 +112,7 @@ const Hero = ({ scrollY }) => {
       image: '/MINI GOLF.jpeg',
     },
     {
-      title: 'Pro Shop',
+      title: 'Athletic Collective',
       image: '/tienda.jpg',
     },
   ]
