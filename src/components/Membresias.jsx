@@ -110,22 +110,6 @@ const Membresias = () => {
             </tbody>
           </table>
         </div>
-
-        {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row justify-center gap-4 mt-12">
-          <a
-            href="#contacto"
-            className="px-8 py-4 bg-white border-2 border-accent-600 text-accent-600 font-semibold rounded-lg hover:bg-accent-50 transition-all duration-300 text-center"
-          >
-            ¿AÚN NO ERES SOCIO?
-          </a>
-          <a
-            href="#registro"
-            className="px-8 py-4 bg-gray-900 text-white font-semibold rounded-lg hover:bg-gray-800 transition-all duration-300 text-center"
-          >
-            Descarga Aplicación GRATIS
-          </a>
-        </div>
       </div>
     </section>
   )
