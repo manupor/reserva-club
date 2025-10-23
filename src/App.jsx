@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Header from './components/Header'
 import Hero from './components/Hero'
+import Eventos from './components/Eventos'
 import Membresias from './components/Membresias'
 import Academia from './components/Academia'
 import Equipo from './components/Equipo'
@@ -29,6 +30,8 @@ function App() {
     switch(activeTab) {
       case 'inicio':
         return <Hero scrollY={scrollY} />
+      case 'eventos':
+        return <Eventos />
       case 'membresias':
         return <Membresias />
       case 'academia':

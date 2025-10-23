@@ -15,6 +15,7 @@ const Header = ({ activeTab, setActiveTab }) => {
   }, [])
 
   const navItems = [
+    { name: 'Eventos', id: 'eventos' },
     { name: 'Membresías', id: 'membresias' },
     { name: 'Academia', id: 'academia' },
     { name: 'Nuestro Equipo', id: 'equipo' },

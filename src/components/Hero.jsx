@@ -6,7 +6,6 @@ const Hero = ({ scrollY }) => {
   const videoRef = useRef(null)
   const [isVisible, setIsVisible] = useState(false)
   const servicesRef = useRef(null)
-  const eventosRef = useRef(null)
   const registroRef = useRef(null)
   const [scrollProgress, setScrollProgress] = useState(0)
   const [videoLoaded, setVideoLoaded] = useState(false)
@@ -82,7 +81,6 @@ const Hero = ({ scrollY }) => {
     }, observerOptions)
 
     if (servicesRef.current) observer.observe(servicesRef.current)
-    if (eventosRef.current) observer.observe(eventosRef.current)
     if (registroRef.current) observer.observe(registroRef.current)
 
     return () => {
@@ -292,64 +290,6 @@ const Hero = ({ scrollY }) => {
             ))}
           </div>
         </div>
-
-        {/* Eventos Empresariales Section - Split Layout Design */}
-        <div ref={eventosRef} className="fade-in-left relative overflow-hidden rounded-2xl mb-16 shadow-2xl bg-[#30544b]">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
-            {/* Left Side - Content */}
-            <div className="relative px-8 py-16 md:py-20 lg:py-24 flex items-center bg-[#30544b]">
-              {/* Decorative elements */}
-              <div className="absolute top-0 right-0 w-64 h-64 bg-[#ba9141]/20 rounded-full blur-3xl"></div>
-              <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/5 rounded-full blur-3xl"></div>
-              
-              {/* Accent line */}
-              <div className="absolute left-0 top-1/4 bottom-1/4 w-1 bg-[#ba9141]"></div>
-              
-              <div className="relative z-10 max-w-xl">
-                {/* Small badge */}
-                <div className="inline-block mb-4">
-                  <span className="px-3 py-1 bg-[#ba9141] text-white text-xs font-bold tracking-wider rounded-full">
-                    TEAM BUILDING
-                  </span>
-                </div>
-                
-                <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
-                  Eventos Empresariales
-                </h3>
-                
-                <p className="text-base md:text-lg text-white/90 mb-8 leading-relaxed">
-                  En Reserva padel te damos la posibilidad de combinar lo mejor del deporte con eventos empresariales. 
-                  Para promover la salud física y social en todas sus formas. Personalicemos tu próximo evento en un 
-                  club totalmente equipado a tu disposición.
-                </p>
-                
-                <button 
-                  onClick={() => window.open('https://wa.me/50687980008?text=Hola, me gustaría consultar disponibilidad para eventos empresariales', '_blank')}
-                  className="group inline-flex items-center px-8 py-4 bg-[#ba9141] text-white font-bold text-base rounded-full hover:bg-[#a67f3a] hover:shadow-2xl hover:shadow-[#ba9141]/50 transition-all duration-500 transform hover:scale-105"
-                >
-                  <span>Consultar Disponibilidad</span>
-                  <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </button>
-              </div>
-            </div>
-            
-            {/* Right Side - Image */}
-            <div className="relative h-64 lg:h-auto min-h-[400px]">
-              <img 
-                src="/537171622_17942193438044176_861054818191775635_n.jpg"
-                alt="Eventos Empresariales - Team Building Pádel"
-                className="absolute inset-0 w-full h-full object-cover"
-              />
-              {/* Subtle gradient overlay on image for better blend */}
-              <div className="absolute inset-0 bg-gradient-to-r from-[#30544b]/40 to-transparent"></div>
-            </div>
-          </div>
-        </div>
-
-        {/* Separador visual elegante */}
-        <div className="h-20 bg-gradient-to-b from-gray-50 to-white"></div>
 
         <div ref={registroRef} className="fade-in-right relative overflow-hidden rounded-2xl shadow-2xl">
           {/* Background Image with Overlay */}
