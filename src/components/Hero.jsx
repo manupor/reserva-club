@@ -183,7 +183,7 @@ const Hero = ({ scrollY }) => {
       <div 
         className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage: 'url(/two-balls-line-blue-synthetic-grass-paddle-tennis-court-health-sport-concept.jpg)',
+          backgroundImage: 'url(/Hero.JPG)',
           backgroundPosition: 'center 40%',
         }}
       >
