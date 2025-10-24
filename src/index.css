@@ -299,4 +299,18 @@
   .animate-fade-in {
     animation: fadeIn 0.3s ease-out forwards;
   }
+
+  /* Ken Burns Effect - Slow Motion Zoom para Hero */
+  @keyframes kenBurnsZoom {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.08);
+    }
+  }
+
+  .hero-slow-motion {
+    animation: kenBurnsZoom 20s ease-out infinite alternate;
+  }
 }

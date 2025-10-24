@@ -181,7 +181,7 @@ const Hero = ({ scrollY }) => {
     <section id="hero" className="relative h-[90vh] min-h-[700px] w-full overflow-hidden">
       {/* Background Image Principal - Pelotas de Pádel */}
       <div 
-        className="absolute inset-0 bg-cover bg-center"
+        className="absolute inset-0 bg-cover bg-center hero-slow-motion"
         style={{
           backgroundImage: 'url(/Hero.JPG)',
           backgroundPosition: 'center 65%',
