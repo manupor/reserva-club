@@ -178,20 +178,20 @@ const Hero = ({ scrollY }) => {
       ></div>
     </div>
 
-    <section id="hero" className="relative h-[85vh] min-h-[600px] w-full overflow-hidden">
+    <section id="hero" className="relative h-[90vh] min-h-[700px] w-full overflow-hidden">
       {/* Background Image Principal - Pelotas de Pádel */}
       <div 
         className="absolute inset-0 bg-cover bg-center"
         style={{
           backgroundImage: 'url(/Hero.JPG)',
-          backgroundPosition: 'center 40%',
+          backgroundPosition: 'center 65%',
         }}
       >
-        {/* Overlay con gradiente sofisticado para elegancia - Reducido para ver más el fondo */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#30544b]/70 via-[#1a2f2a]/60 to-black/75" />
+        {/* Overlay con gradiente optimizado para mostrar la estructura */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#30544b]/60 via-[#1a2f2a]/40 to-black/70" />
         
-        {/* Overlay adicional para profundidad - Reducido */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-[#30544b]/40" />
+        {/* Overlay adicional que protege el área de la estructura blanca */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-[#30544b]/30" />
         
         {/* Efecto de viñeta elegante - Más sutil */}
         <div className="absolute inset-0" style={{
@@ -218,8 +218,8 @@ const Hero = ({ scrollY }) => {
         <div className="absolute bottom-8 right-8 w-16 h-16 border-r-2 border-b-2 border-[#ba9141]/30" />
       </div>
 
-      {/* Content con diseño elegante */}
-      <div className="relative h-full flex items-center justify-center px-4 z-10">
+      {/* Content con diseño elegante - Posicionado arriba para dejar ver la estructura */}
+      <div className="relative h-full flex items-start justify-center px-4 z-10 pt-24 md:pt-32">
         <div className="max-w-5xl mx-auto text-center">
           {/* Badge elegante superior */}
           <div className="inline-block mb-6 opacity-0 animate-slide-up">
@@ -245,7 +245,7 @@ const Hero = ({ scrollY }) => {
             <div className="w-16 h-px bg-gradient-to-l from-transparent to-[#ba9141]/60"></div>
           </div>
           
-          <p className="text-base md:text-lg text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed opacity-0 animate-slide-up delay-600 drop-shadow-lg backdrop-blur-sm bg-black/20 p-5 rounded-2xl border border-white/10">
+          <p className="text-base md:text-lg text-white/95 mb-8 max-w-2xl mx-auto leading-relaxed opacity-0 animate-slide-up delay-600 drop-shadow-lg backdrop-blur-md bg-black/30 px-6 py-4 rounded-xl border border-white/10">
             Un club social y deportivo para toda la familia, que combina lo mejor del Padel y la naturaleza. En nuestra Reserva, le ofrecemos una experiencia culinaria inigualable, dos simuladores de golf de última generación, nuestras pistas de Padel profesionales y nuestra tienda boutique.
           </p>
           
