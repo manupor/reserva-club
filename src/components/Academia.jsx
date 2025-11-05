@@ -174,7 +174,7 @@ const Academia = () => {
               {/* Academia Card */}
               <div className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group">
                 {/* Header with Image */}
-                <div className="relative h-80 md:h-96 overflow-hidden">
+                <div className="relative h-96 md:h-[32rem] overflow-hidden">
                   <img
                     src={academia.bgImage}
                     alt={academia.title}
