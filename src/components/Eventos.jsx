@@ -81,7 +81,7 @@ const Eventos = () => {
               </h2>
               
               <p className="text-base md:text-lg text-white/90 mb-8 leading-relaxed">
-                En Reserva padel te damos la posibilidad de combinar lo mejor del deporte con eventos empresariales. 
+                En Club Reserva te damos la posibilidad de combinar lo mejor del deporte con eventos empresariales. 
                 Para promover la salud física y social en todas sus formas. Personalicemos tu próximo evento en un 
                 club totalmente equipado a tu disposición.
               </p>
