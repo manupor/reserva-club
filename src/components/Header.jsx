@@ -37,9 +37,9 @@ const Header = ({ activeTab, setActiveTab }) => {
           {/* Logo */}
           <button onClick={() => setActiveTab('inicio')} className="flex items-center space-x-2">
             <img 
-              src="/reserva logo web.png" 
+              src="/reserva%20logo%20web.png" 
               alt="Reserva Sports & Social Club" 
-              className="h-10 md:h-12 w-auto object-contain"
+              className="h-12 md:h-14 w-auto object-contain"
             />
           </button>
 
