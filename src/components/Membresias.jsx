@@ -14,13 +14,13 @@ const Membresias = () => {
     { name: 'Eventos exclusivos', familiar: true, ejecutiva: true, corporativa: true },
     { name: 'Prioridad exclusivo socios', familiar: true, ejecutiva: true, corporativa: true },
     { name: 'Paquete bienvenida', familiar: true, ejecutiva: true, corporativa: true },
-    { name: 'Descuento en tienda y restaurante', familiar: '10 %', ejecutiva: '10 %', corporativa: '15 %' },
+    { name: 'Descuento en tienda y restaurante', familiar: '10 %', ejecutiva: '10 %', corporativa: '10 %' },
     { name: 'Reserva Preferente para reservaciones de última hora', familiar: true, ejecutiva: true, corporativa: true },
     { name: 'Una partida por semana en pista sin costo (solo socios)', familiar: true, ejecutiva: true, corporativa: true },
     { name: 'Invitar hasta cero socios y sus acompañantes', familiar: true, ejecutiva: true, corporativa: true },
     { name: 'Servicio de línea exclusiva', familiar: true, ejecutiva: true, corporativa: true },
-    { name: 'Descuento en tarifas de renta', familiar: '10 %', ejecutiva: '10 %', corporativa: '15 %' },
-    { name: 'Descuento en clases privadas', familiar: '10 %', ejecutiva: '10 %', corporativa: '15 %' },
+    { name: 'Descuento en tarifas de renta', familiar: '10 %', ejecutiva: '10 %', corporativa: '10 %' },
+    { name: 'Descuento en clases privadas', familiar: '10 %', ejecutiva: '10 %', corporativa: '10 %' },
   ]
 
   return (
