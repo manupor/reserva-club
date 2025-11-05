@@ -180,7 +180,9 @@ const Academia = () => {
                     alt={academia.title}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     style={{
-                      objectPosition: academia.id === 'competicion' ? 'center 35%' : 'center 30%'
+                      objectPosition: academia.id === 'competicion' ? 'center 35%' : 'center 30%',
+                      transform: academia.id === 'infantiles' ? 'scale(0.85)' : 'scale(1)',
+                      transformOrigin: 'center'
                     }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
