@@ -49,10 +49,11 @@ const Membresias = () => {
 
         {/* Logo */}
         <div className="flex justify-center mb-12">
-          <div className="text-6xl font-serif text-gray-700">
-            <span className="text-gray-800">R</span>
-            <span className="text-sm align-super">eserva</span>
-          </div>
+          <img 
+            src="/reserva%20logo%20web.png" 
+            alt="Reserva Logo" 
+            className="h-16 md:h-20 w-auto object-contain"
+          />
         </div>
 
         {/* Membership Table */}
