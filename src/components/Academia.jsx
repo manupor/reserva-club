@@ -47,7 +47,7 @@ const Academia = () => {
       subtitle: 'Desarrollo y diversión para todas las edades',
       icon: Heart,
       gradient: 'from-emerald-500 via-green-500 to-amber-400',
-      bgImage: '/kids.jpg',
+      bgImage: '/rserva%20kids.jpeg',
       description: 'Contamos con academias de niños de todas las edades, divididas por nivel y edad en grupos de 4 – 8 o 12 jugadores.',
       features: [
         {
