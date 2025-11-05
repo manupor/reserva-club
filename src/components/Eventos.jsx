@@ -90,7 +90,6 @@ const Eventos = () => {
               <div className="space-y-3 mb-8">
                 {[
                   'Instalaciones de clase mundial',
-                  'Catering personalizado',
                   'Actividades deportivas y sociales',
                   'Espacios flexibles para grupos'
                 ].map((benefit, index) => (
