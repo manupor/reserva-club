@@ -124,8 +124,11 @@ const Eventos = () => {
             <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Solicita Información
             </h3>
-            <p className="text-lg text-gray-600">
+            <p className="text-lg text-gray-600 mb-2">
               Completa el formulario y nos pondremos en contacto contigo
+            </p>
+            <p className="text-base text-gray-500">
+              La cotización será enviada en las próximas 24 horas
             </p>
           </div>
 
