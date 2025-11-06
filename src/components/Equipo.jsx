@@ -10,40 +10,6 @@ const Equipo = () => {
 
   const team = [
     {
-      name: 'JEAN MICHAEL',
-      role: 'Entrenador',
-      image: '/Jean Michael.JPG',
-      imagePosition: 'object-bottom',
-      icon: Trophy,
-      stats: [
-        { label: 'Nivel', value: 'APA' },
-        { label: 'Certificado', value: 'MBA' },
-      ],
-      features: [
-        'Monitor Nivel 1 APA',
-        'Coach certificado por Padel MBA',
-        'Especializado en guiar a jugadores principiantes',
-        'Metodología que combina técnica, estructura y motivación',
-      ],
-    },
-    {
-      name: 'JAIME',
-      role: 'Profesor',
-      image: '/Jaime.JPG',
-      imagePosition: 'object-bottom',
-      icon: Target,
-      stats: [
-        { label: 'Experiencia', value: '6 años' },
-        { label: 'Título', value: 'RPP' },
-      ],
-      features: [
-        '6 años de experiencia como profesor en España, Holanda y Costa Rica',
-        'Título: RPP (Registro Profesional de Pádel) y FMP',
-        'Jugador de 1ª-2ª categoría en la FMP',
-        'Formado con metodologías europeas de alta competencia',
-      ],
-    },
-    {
       name: 'JUGADORA DESTACADA',
       role: 'Primera Categoría Femenina',
       image: '/jugadora_destacada.jpg',
