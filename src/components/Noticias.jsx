@@ -3,43 +3,43 @@ import { Instagram } from 'lucide-react'
 
 const Noticias = () => {
 
-  // Posts de Instagram con imágenes locales
+  // Posts de Instagram con imágenes locales (orden invertido - más reciente primero)
   const instagramPosts = [
     { 
-      url: 'https://www.instagram.com/p/DPenj_BETbl/',
-      image: '/post1.png'
-    },
-    { 
-      url: 'https://www.instagram.com/p/DNqjytex2dU/',
-      image: '/posr 2.png'
-    },
-    { 
-      url: 'https://www.instagram.com/p/DPXILFgkb2J/',
-      image: '/3.png'
-    },
-    { 
-      url: 'https://www.instagram.com/p/DQH7eHakabG/',
-      image: '/4.png'
-    },
-    { 
-      url: 'https://www.instagram.com/p/DQBDsBNDDgF/',
-      image: '/5.png'
-    },
-    { 
-      url: 'https://www.instagram.com/p/DP2WcAKkcX-/',
-      image: '/6.png'
-    },
-    { 
-      url: 'https://www.instagram.com/p/DPxIpo1jFYK/',
-      image: '/7.png'
+      url: 'https://www.instagram.com/p/DPUbI1XEbvZ/',
+      image: '/9.png'
     },
     { 
       url: 'https://www.instagram.com/p/DPkZ-HPkUcL/',
       image: '/8.png'
     },
     { 
-      url: 'https://www.instagram.com/p/DPUbI1XEbvZ/',
-      image: '/9.png'
+      url: 'https://www.instagram.com/p/DPxIpo1jFYK/',
+      image: '/7.png'
+    },
+    { 
+      url: 'https://www.instagram.com/p/DP2WcAKkcX-/',
+      image: '/6.png'
+    },
+    { 
+      url: 'https://www.instagram.com/p/DQBDsBNDDgF/',
+      image: '/5.png'
+    },
+    { 
+      url: 'https://www.instagram.com/p/DQH7eHakabG/',
+      image: '/4.png'
+    },
+    { 
+      url: 'https://www.instagram.com/p/DPXILFgkb2J/',
+      image: '/3.png'
+    },
+    { 
+      url: 'https://www.instagram.com/p/DNqjytex2dU/',
+      image: '/posr 2.png'
+    },
+    { 
+      url: 'https://www.instagram.com/p/DPenj_BETbl/',
+      image: '/post1.png'
     },
   ]
 
