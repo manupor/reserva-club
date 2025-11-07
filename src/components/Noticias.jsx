@@ -11,7 +11,7 @@ const Noticias = () => {
     },
     { 
       url: 'https://www.instagram.com/p/DNqjytex2dU/',
-      image: '/posr%202.png'
+      image: '/posr 2.png'
     },
     { 
       url: 'https://www.instagram.com/p/DPXILFgkb2J/',

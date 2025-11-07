@@ -180,13 +180,17 @@ const Hero = ({ scrollY }) => {
 
     <section id="hero" className="relative h-[90vh] min-h-[700px] w-full overflow-hidden">
       {/* Background Image Principal - Pelotas de Pádel */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center hero-slow-motion"
-        style={{
-          backgroundImage: 'url(/Hero.JPG)',
-          backgroundPosition: 'center 65%',
-        }}
-      >
+      <div className="absolute inset-0">
+        <img 
+          src="/Hero.JPG" 
+          alt="Club Reserva Hero" 
+          className="w-full h-full object-cover object-[center_65%]"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        />
+      </div>
+      <div className="absolute inset-0">
         {/* Overlay con gradiente optimizado para mostrar la estructura */}
         <div className="absolute inset-0 bg-gradient-to-br from-[#30544b]/60 via-[#1a2f2a]/40 to-black/70" />
         
@@ -281,7 +285,13 @@ const Hero = ({ scrollY }) => {
                 className={`relative h-72 overflow-hidden rounded-xl shadow-lg group transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
                 style={{ transitionDelay: `${index * 150}ms` }}
               >
-                <img src={service.image} alt={service.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                <img 
+                  src={service.image} 
+                  alt={service.title} 
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
+                  loading="lazy"
+                  decoding="async"
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-6">
                   <h4 className="text-white font-bold text-lg">{service.title}</h4>
