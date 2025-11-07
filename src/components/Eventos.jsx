@@ -110,6 +110,8 @@ const Eventos = () => {
               src="/537171622_17942193438044176_861054818191775635_n.jpg"
               alt="Eventos - Team Building Pádel"
               className="absolute inset-0 w-full h-full object-cover"
+              loading="lazy"
+              decoding="async"
             />
             {/* Subtle gradient overlay on image for better blend */}
             <div className="absolute inset-0 bg-gradient-to-r from-[#30544b]/40 to-transparent"></div>

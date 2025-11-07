@@ -179,6 +179,8 @@ const Academia = () => {
                     src={academia.bgImage}
                     alt={academia.title}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    loading="lazy"
+                    decoding="async"
                     style={{
                       objectPosition: academia.id === 'competicion' ? 'center 35%' : 'center 30%'
                     }}
