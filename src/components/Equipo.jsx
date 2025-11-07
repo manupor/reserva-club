@@ -10,7 +10,7 @@ const Equipo = () => {
 
   const team = [
     {
-      name: 'JUGADORA DESTACADA',
+      name: 'ALE MIRANDA',
       role: 'Primera Categoría Femenina',
       image: '/jugadora_destacada.jpg',
       imagePosition: 'object-bottom',
@@ -27,8 +27,8 @@ const Equipo = () => {
       ],
     },
     {
-      name: 'DIRECTOR DEPORTIVO',
-      role: 'Profesor de Padel',
+      name: 'NICOLÁS CANTUDO',
+      role: 'Director Deportivo',
       image: '/DIrector Deportivo.JPG',
       imagePosition: 'object-bottom',
       icon: Zap,
@@ -80,7 +80,7 @@ const Equipo = () => {
                     src={member.image}
                     alt={member.name}
                     className={`w-full h-full object-cover ${member.imagePosition || 'object-[center_20%]'} group-hover:scale-105 transition-transform duration-700`}
-                    style={member.name === 'JEAN MICHAEL' ? { transform: 'translateY(-100px)' } : member.name === 'JAIME' ? { transform: 'translateY(-30px)' } : member.name === 'DIRECTOR DEPORTIVO' ? { transform: 'translateY(-100px)' } : member.name === 'JUGADORA DESTACADA' ? { transform: 'translateY(-100px)' } : {}}
+                    style={member.name === 'JEAN MICHAEL' ? { transform: 'translateY(-100px)' } : member.name === 'JAIME' ? { transform: 'translateY(-30px)' } : member.name === 'NICOLÁS CANTUDO' ? { transform: 'translateY(-100px)' } : member.name === 'ALE MIRANDA' ? { transform: 'translateY(-100px)' } : {}}
                   />
                   {/* Overlay gradiente deportivo */}
                   <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/80 to-transparent"></div>
